@@ -5,29 +5,29 @@ void lcdinit (pantalla_t* iniciar){
     if(iniciar -> puerto = 'a'){
     RCC -> APB2ENR |= RCC_APB2ENR_IOPAEN;
     
-    for (int i = 0, i <= 7, i ++){
+    for (int i = 0, i < 8, i ++){
         if(iniciar -> datos [i] < 7){
-            GPIOA -> CRL & (0XF << (iniciar -> datos [i] * 4));
-            GPIOA -> CRL & (0X1 << (iniciar -> datos [i] * 4));
+            GPIOA -> CRL & ~(0XF << (iniciar -> datos [i] * 4));
+            GPIOA -> CRL |= (0X1 << (iniciar -> datos [i] * 4));
         }else{
-            GPIOA -> CRH & (0XF << ((iniciar -> datos [i] %8) * 4));
-            GPIOA -> CRH & (0X1 << ((iniciar -> datos [i] %8) * 4));
+            GPIOA -> CRH & ~(0XF << ((iniciar -> datos [i] %8) * 4));
+            GPIOA -> CRH |= (0X1 << ((iniciar -> datos [i] %8) * 4));
         }
     }
-        if(iniciar ->  rw < 7){
-            GPIOA -> CRL & (0XF << (iniciar -> rw * 4));
-            GPIOA -> CRL & (0X1 << (iniciar -> rw [i] * 4));
+        if(iniciar ->  rw < 8){
+            GPIOA -> CRL & ~(0XF << (iniciar -> rw * 4));
+            GPIOA -> CRL |= (0X1 << (iniciar -> rw * 4));
         }else{
-            GPIOA -> CRH & (0XF << ((iniciar -> rw %8) * 4));
-            GPIOA -> CRH & (0X1 << ((iniciar -> rw %8) * 4));
+            GPIOA -> CRH & ~(0XF << ((iniciar -> rw %8) * 4));
+            GPIOA -> CRH |= (0X1 << ((iniciar -> rw %8) * 4));
         }
 
-        if(iniciar ->  rs < 7){
-            GPIOA -> CRL & (0XF << (iniciar -> rs * 4));
-            GPIOA -> CRL & (0X1 << (iniciar -> rs [i] * 4));
+        if(iniciar ->  rs < 8){
+            GPIOA -> CRL & ~(0XF << (iniciar -> rs * 4));
+            GPIOA -> CRL |= (0X1 << (iniciar -> rs * 4));
         }else{
-            GPIOA -> CRH & (0XF << ((iniciar -> rs %8) * 4));
-            GPIOA -> CRH & (0X1 << ((iniciar -> rs %8) * 4));
+            GPIOA -> CRH & ~(0XF << ((iniciar -> rs %8) * 4));
+            GPIOA -> CRH |= (0X1 << ((iniciar -> rs %8) * 4));
         }
     
 }
@@ -35,29 +35,29 @@ void lcdinit (pantalla_t* iniciar){
         if(iniciar -> puerto = 'b'){
     RCC -> APB2ENR |= RCC_APB2ENR_IOPBEN;
     
-    for (int i = 0, i <= 7, i ++){
+    for (int i = 0, i < 8, i ++){
         if(iniciar -> datos [i] < 7){
             GPIOB -> CRL & ~(0XF << (iniciar -> datos [i] * 4));
-            GPIOB -> CRL & (0X1 << (iniciar -> datos [i] * 4));
+            GPIOB -> CRL |= (0X1 << (iniciar -> datos [i] * 4));
         }else{
             GPIOB -> CRH & ~(0XF << ((iniciar -> datos [i] %8) * 4));
-            GPIOB -> CRH & (0X1 << ((iniciar -> datos [i] %8) * 4));
+            GPIOB -> CRH |= (0X1 << ((iniciar -> datos [i] %8) * 4));
         }
     }
-        if(iniciar ->  rw < 7){
+        if(iniciar ->  rw < 8){
             GPIOB -> CRL & ~(0XF << (iniciar -> rw * 4));
-            GPIOB -> CRL & (0X1 << (iniciar -> rw [i] * 4));
+            GPIOB -> CRL |= (0X1 << (iniciar -> rw * 4));
         }else{
             GPIOB -> CRH & ~(0XF << ((iniciar -> rw %8) * 4));
-            GPIOB -> CRH & (0X1 << ((iniciar -> rw %8) * 4));
+            GPIOB -> CRH |= (0X1 << ((iniciar -> rw %8) * 4));
         }
 
-        if(iniciar -> rs < 7){
+        if(iniciar -> rs < 8){
             GPIOB -> CRL & ~(0XF << (iniciar -> rs * 4));
-            GPIOB -> CRL & (0X1 << (iniciar -> rs [i] * 4));
+            GPIOB -> CRL |= (0X1 << (iniciar -> rs * 4));
         }else{
             GPIOB -> CRH & ~(0XF << ((iniciar -> rs %8) * 4));
-            GPIOB -> CRH & (0X1 << ((iniciar -> rs %8) * 4));
+            GPIOB -> CRH |= (0X1 << ((iniciar -> rs %8) * 4));
         }
     
 }
@@ -65,29 +65,29 @@ void lcdinit (pantalla_t* iniciar){
         if(iniciar -> puerto = 'c'){
     RCC -> APB2ENR |= RCC_APB2ENR_IOPCEN;
     
-    for (int i = 0, i <= 7, i ++){
+    for (int i = 0, i < 8, i ++){
         if(iniciar -> datos [i] < 7){
-            GPIOC -> CRL & (0XF << (iniciar -> datos [i] * 4));
-            GPIOC -> CRL & (0X1 << (iniciar -> datos [i] * 4));
+            GPIOC -> CRL & ~(0XF << (iniciar -> datos [i] * 4));
+            GPIOC -> CRL |= (0X1 << (iniciar -> datos [i] * 4));
         }else{
-            GPIOC -> CRH & (0XF << ((iniciar -> datos [i] %8) * 4));
-            GPIOC -> CRH & (0X1 << ((iniciar -> datos [i] %8) * 4));
+            GPIOC -> CRH & ~(0XF << ((iniciar -> datos [i] %8) * 4));
+            GPIOC -> CRH |= (0X1 << ((iniciar -> datos [i] %8) * 4));
         }
     }
-        if(iniciar ->  rw < 7){
-            GPIOC -> CRL & (0XF << (iniciar -> rw * 4));
-            GPIOC -> CRL & (0X1 << (iniciar -> rw [i] * 4));
+        if(iniciar ->  rw < 8){
+            GPIOC -> CRL & ~(0XF << (iniciar -> rw * 4));
+            GPIOC -> CRL |= (0X1 << (iniciar -> rw * 4));
         }else{
-            GPIOC -> CRH & (0XF << ((iniciar -> rw %8) * 4));
-            GPIOC -> CRH & (0X1 << ((iniciar -> rw %8) * 4));
+            GPIOC -> CRH & ~(0XF << ((iniciar -> rw %8) * 4));
+            GPIOC -> CRH |= (0X1 << ((iniciar -> rw %8) * 4));
         }
 
-        if(iniciar ->  rs < 7){
-            GPIOC -> CRL & (0XF << (iniciar -> rs * 4));
-            GPIOC -> CRL & (0X1 << (iniciar -> rs [i] * 4));
+        if(iniciar ->  rs < 8){
+            GPIOC -> CRL & ~(0XF << (iniciar -> rs * 4));
+            GPIOC -> CRL |= (0X1 << (iniciar -> rs * 4));
         }else{
-            GPIOC -> CRH & (0XF << ((iniciar -> rs %8) * 4));
-            GPIOC -> CRH & (0X1 << ((iniciar -> rs %8) * 4));
+            GPIOC -> CRH & ~(0XF << ((iniciar -> rs %8) * 4));
+            GPIOC -> CRH |= (0X1 << ((iniciar -> rs %8) * 4));
         }
     
 }
@@ -95,29 +95,29 @@ void lcdinit (pantalla_t* iniciar){
         if(iniciar -> puerto = 'd'){
     RCC -> APB2ENR |= RCC_APB2ENR_IOPDEN;
     
-    for (int i = 0, i <= 7, i ++){
+    for (int i = 0, i < 8, i ++){
         if(iniciar -> datos [i] < 7){
-            GPIOD -> CRL & (0XF << (iniciar -> datos [i] * 4));
-            GPIOD -> CRL & (0X1 << (iniciar -> datos [i] * 4));
+            GPIOD -> CRL & ~(0XF << (iniciar -> datos [i] * 4));
+            GPIOD -> CRL |= (0X1 << (iniciar -> datos [i] * 4));
         }else{
-            GPIOD -> CRH & (0XF << ((iniciar -> datos [i] %8) * 4));
-            GPIOD -> CRH & (0X1 << ((iniciar -> datos [i] %8) * 4));
+            GPIOD -> CRH & ~(0XF << ((iniciar -> datos [i] %8) * 4));
+            GPIOD -> CRH |= (0X1 << ((iniciar -> datos [i] %8) * 4));
         }
     }
-        if(iniciar ->  rw < 7){
-            GPIOD -> CRL & (0XF << (iniciar -> rw * 4));
-            GPIOD -> CRL & (0X1 << (iniciar -> rw [i] * 4));
+        if(iniciar ->  rw < 8){
+            GPIOD -> CRL & ~(0XF << (iniciar -> rw * 4));
+            GPIOD -> CRL |= (0X1 << (iniciar -> rw * 4));
         }else{
-            GPIOD -> CRH & (0XF << ((iniciar -> rw %8) * 4));
-            GPIOD -> CRH & (0X1 << ((iniciar -> rw %8) * 4));
+            GPIOD -> CRH & ~(0XF << ((iniciar -> rw %8) * 4));
+            GPIOD -> CRH |= (0X1 << ((iniciar -> rw %8) * 4));
         }
 
-        if(iniciar ->  rs < 7){
-            GPIOD -> CRL & (0XF << (iniciar -> rs * 4));
-            GPIOD -> CRL & (0X1 << (iniciar -> rs [i] * 4));
+        if(iniciar ->  rs < 8){
+            GPIOD -> CRL & ~(0XF << (iniciar -> rs * 4));
+            GPIOD -> CRL |= (0X1 << (iniciar -> rs * 4));
         }else{
-            GPIOD -> CRH & (0XF << ((iniciar -> rs %8) * 4));
-            GPIOD -> CRH & (0X1 << ((iniciar -> rs %8) * 4));
+            GPIOD -> CRH & ~(0XF << ((iniciar -> rs %8) * 4));
+            GPIOD -> CRH |= (0X1 << ((iniciar -> rs %8) * 4));
         }
     
 }
@@ -126,9 +126,9 @@ void lcdinit (pantalla_t* iniciar){
 
 void lcdclear(pantalla_t* limpiar){
 
-    int borrar [7] ={1,0,0,0,0,0,0,0};
+    int borrar [7] ={0,0,0,0,0,0,0,1};
     
-    for(int i = 0, i <=7, i++){
+    for(int i = 0, i <8, i++){
             if(borrar [i]) {limpiar -> puerto -> BSRR |= (1 << limpiar -> datos [i]);
             }else{
                 limpiar -> puerto -> BSRR |= (1 << (limpiar -> datos [i] + 16));
