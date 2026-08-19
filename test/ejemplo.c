@@ -7,4 +7,6 @@ int main (){
     lcd.datos {1,2,3,4,5,6,7,8};
     lcd.rw = 10;
     lcd.rs = 11;
+
+    lcdinit();
 }
